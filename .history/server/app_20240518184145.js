@@ -38,7 +38,6 @@ const update = multer({
 app.use(update.any())
 
 //注册一下路由
-app.use("/test",require("./routers/TestRouter"))
 
 // 写一个helloworld的接口
 app.get("/",(req,res)=>{

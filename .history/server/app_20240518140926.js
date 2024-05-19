@@ -15,6 +15,9 @@ const app = express();
 // 定义一个端口
 const port = 8080
 
+// 引入中间件进行解析（要写在路由前面）
+app.use(express.json())
+
 //开放跨域请求
 app.use(function(req,res,next){
   //设置允许跨域的域名，*代表允许任意域名跨域
@@ -26,19 +29,6 @@ app.use(function(req,res,next){
   if(req.method == "OPTION") res.sendStatus(200)//让options尝试请求快速结束
   else next();
 });
-
-// 引入中间件进行解析（要写在路由前面）
-app.use(express.json())
-
-//指定上传的临时目录
-const update = multer({
-  dest: ".public/upload/temp"
-})
-// 允许所有接口有上传功能
-app.use(update.any())
-
-//注册一下路由
-app.use("/test",require("./routers/TestRouter"))
 
 // 写一个helloworld的接口
 app.get("/",(req,res)=>{

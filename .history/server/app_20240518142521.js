@@ -34,11 +34,8 @@ app.use(express.json())
 const update = multer({
   dest: ".public/upload/temp"
 })
-// 允许所有接口有上传功能
-app.use(update.any())
 
-//注册一下路由
-app.use("/test",require("./routers/TestRouter"))
+app.use(update.any())
 
 // 写一个helloworld的接口
 app.get("/",(req,res)=>{

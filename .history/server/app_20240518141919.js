@@ -30,15 +30,9 @@ app.use(function(req,res,next){
 // 引入中间件进行解析（要写在路由前面）
 app.use(express.json())
 
-//指定上传的临时目录
-const update = multer({
-  dest: ".public/upload/temp"
-})
-// 允许所有接口有上传功能
-app.use(update.any())
-
-//注册一下路由
-app.use("/test",require("./routers/TestRouter"))
+const update = {
+  dest:""
+}
 
 // 写一个helloworld的接口
 app.get("/",(req,res)=>{
