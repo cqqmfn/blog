@@ -15,7 +15,7 @@ router.get("/test",async(req,res)=>{
 
   res.send({
     id:genid.NextId(),
-    out//相当于out:out
+    out//相当于
   })
 })
 

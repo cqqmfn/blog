@@ -14,12 +14,4 @@ db.async.all = (sql,params)=>{
     })
   })
 }
-
-db.async.run = (sql,params)=>{
-  return new Promise((resolve,reject)=>{
-    db.run(sql,params,(err,rows)=>{
-      resolve({err,rows})
-    })
-  })
-}
 module.exports = {db,genid}

@@ -10,15 +10,7 @@ db.async = {}
 db.async.all = (sql,params)=>{
   return new Promise((resolve,reject)=>{
     db.all(sql,params,(err,rows)=>{
-      resolve({err,rows})
-    })
-  })
-}
-
-db.async.run = (sql,params)=>{
-  return new Promise((resolve,reject)=>{
-    db.run(sql,params,(err,rows)=>{
-      resolve({err,rows})
+      resolve({err,rows)
     })
   })
 }
